@@ -1,0 +1,43 @@
+<!-- <p>appointments works!</p>
+<div class="example-container">
+    <mat-form-field>
+      <mat-label>Nome Completo</mat-label>
+      <input matInput #input minlength="10" placeholder="Ex. Nougat">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Sexo</mat-label>
+      <mat-select>
+        <mat-option value="option">Mulher Cisgênero</mat-option>
+        <mat-option value="option">Homem Cisgênero</mat-option>
+        <mat-option value="option">Mulher Transgênero</mat-option>
+        <mat-option value="option">Homem Transgênero</mat-option>4
+        <mat-option value="option">Outro/Prefiro Não Informar</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  
+<div class="example-container">
+    <mat-form-field>
+      <mat-label>Enter your email</mat-label>
+      <input matInput
+             placeholder="pat@example.com"
+             [formControl]="email"
+             (blur)="updateErrorMessage()"
+             required>
+      @if (email.invalid) {
+        <mat-error>{{errorMessage}}</mat-error>
+      }
+    </mat-form-field>
+  </div> -->
+
+  <div>
+    <h2>Agendamento</h2>
+    <ul>
+      <li *@For="let appointment of appointments">
+        {{ appointment.date }} - {{ appointment.time }} 
+        <button="bookAppointment(appointment.id)">Agendar</button>
+      </li>
+    </ul>
+  </div>
+  
