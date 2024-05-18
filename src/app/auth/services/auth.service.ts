@@ -1,30 +1,24 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RouterOutlet } from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private authUrl = 'https://api.example.com/auth';
+  private authUrl = 'http://localhost:3000/doc';
   private tokenKey = 'auth-token';
 
-  constructor(private http: HttpClient, private router: RouterOutlet) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  login(username: string, password: string): Observable<boolean> {
+  login(username: string, password: string): Observable<any> {
     return this.http.post<{ token: string }>(`${this.authUrl}/login`, { username, password })
-      .pipe(
-        tap(response => {
-          localStorage.setItem(this.tokenKey, response.token);
-        }),
-        mapTo(true),
-        catchError(error => {
-          console.error('Login error', error);
-          return of(false);
-        })
-      );
+  }
+ 
+  register(user: User): Observable<any> {
+    return this.http.post(`${this.authUrl}/login`, user)
   }
 
   logout(): void {

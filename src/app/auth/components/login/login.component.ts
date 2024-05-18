@@ -1,18 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Router, RouterLink } from '@angular/router';
 import { first } from 'rxjs';
 import { Constants } from '../../../commons/constants/constants.enum';
-import { UserCredentials } from '../../models/user-credentials.model';
 import { AuthService } from '../../services/auth.service';
+import { UserCredentials } from '../../models/user-credentials.model';
 
 @Component({
   selector: 'app-login',
@@ -46,7 +41,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     const user: UserCredentials = this.form.getRawValue();
     this.authService
-      .login(user)
+      .login(user.name, user.password)
       .pipe(first())
       .subscribe({
         next: (res) => {

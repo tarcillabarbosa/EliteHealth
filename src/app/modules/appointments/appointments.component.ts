@@ -21,7 +21,7 @@ import { AppointmentsService } from './services/appointments.service';
     MatSelectModule,
     MatIconModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
   ],
   templateUrl: './appointments.component.html',
   styleUrl: './appointments.component.scss'

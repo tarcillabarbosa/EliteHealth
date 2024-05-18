@@ -11,14 +11,15 @@
 
 // }
 
+// import { Component } from '@angular/core';
 import { Component } from '@angular/core';
-import { AuthService } from './service/auth.service';
+import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [AuthService, Router],
+  imports: [],
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
 })
@@ -29,7 +30,7 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   login(): void {
-    this.authService.login(this.username, this.password).subscribe(success: any => {
+    this.authService.login(this.username, this.password).subscribe((success: any) => {
       if (success) {
         this.router.navigate(['/appointments']);
       } else {
