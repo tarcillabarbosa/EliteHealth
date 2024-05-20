@@ -1,0 +1,22 @@
+.spacer {
+    display: flex;
+    align-items: center; 
+    background-color: rgb(18, 0, 83);
+    color: #ffd700;
+    .example-icon {
+      color: gold; // Define a cor dourada para o ícone do menu
+    }
+    .agendar {
+      color: gold; // Define a cor dourada para o texto dos botões
+      &:last-child {
+      margin-left: 10px; // Isso adiciona um espaçamento entre os botões, se necessário
+      justify-content: right;
+      }
+    }
+    .buttons-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    
+  }

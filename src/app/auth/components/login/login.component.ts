@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     const user: UserCredentials = this.form.getRawValue();
     this.authService
-      .login(user.name, user.password)
+      .login(user.email, user.password)
       .pipe(first())
       .subscribe({
         next: (res) => {
