@@ -21,7 +21,7 @@ export class AuthComponent {
         if (success) {
           this.router.navigate(['/appointments']);
         } else {
-          alert('Erro ao logar');
+          alert('Erro no login');
         }
       });
     }

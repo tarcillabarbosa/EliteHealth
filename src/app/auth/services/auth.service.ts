@@ -1,63 +1,17 @@
-// import { HttpClient } from '@angular/common/http';
-// import { Injectable } from '@angular/core';
-// import { Router } from '@angular/router';
-// import { Observable, tap } from 'rxjs';
-// import { User } from '../models/user.model';
-// import { environment } from '../../../environments/environment.development';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthService {
-//   private authUrl = `${environment.API_URL}/auth`;
-//   private tokenKey = 'auth-token';
-
-//   constructor(private http: HttpClient, private router: Router) { }
-
-//   login(email: string, password: string): Observable<any> {
-//     return this.http.post<{ token: string }>(`${this.authUrl}/login`, { email, password })
-//       .pipe(
-//         tap(response => {
-//           if (response.token) {
-//             localStorage.setItem(this.tokenKey, response.token);
-//           }
-//         })
-//       );
-//   }
- 
-//   register(user: User): Observable<any> {
-//     return this.http.post(`${this.authUrl}/register`, user);
-//   }
-
-//   logout(): void {
-//     localStorage.removeItem(this.tokenKey);
-//     this.router.navigate(['/login']);
-//   }
-
-//   isAuthenticated(): boolean {
-//     return !!localStorage.getItem(this.tokenKey);
-//   }
-
-//   getToken(): string | null {
-//     return localStorage.getItem(this.tokenKey);
-//   }
-// }
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
 import { Constants } from '../../commons/constants/constants.enum';
-import { User } from '../models/user.model';
-import { UserCredentials } from '../models/user-credentials.model';
+import { AuthUser, User, UserRole } from '../models/user.model';
+import { UserCredentials } from '../models/user.model';
 import { AuthenticatedUser } from '../models/authenticated-user.model';
-// import {
-//   UserRole,
-// } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthService implements OnInit {
   private _user: User | null = null;
 
@@ -87,8 +41,8 @@ export class AuthService implements OnInit {
     return this.http.post<void>(this.apiUrl + '/register', user);
   }
 
-  login(credentials: UserCredentials): Observable<AuthenticatedUser> {
-    return this.http.post<AuthenticatedUser>(this.apiUrl + '/login', credentials);
+  login(email: string, password: string): Observable<AuthenticatedUser> {
+    return this.http.post<AuthenticatedUser>(this.apiUrl + '/login', {email, password});
   }
 
   logout(): void {

@@ -14,6 +14,7 @@ import { DateParserService } from '../../../../commons/services/date-parser.serv
 import { Appointment, AppointmentStatus, appointmentStatusDict } from '../../models/appointment.model';
 import { PermissionsService } from '../../services/permissions.service';
 import { AppointmentsService } from './../../services/appointments.service';
+import moment from 'moment';
 
 @Component({
   selector: 'app-create',

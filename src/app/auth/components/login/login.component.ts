@@ -7,7 +7,7 @@ import { Router, RouterLink } from '@angular/router';
 import { first } from 'rxjs';
 import { Constants } from '../../../commons/constants/constants.enum';
 import { AuthService } from '../../services/auth.service';
-import { UserCredentials } from '../../models/user-credentials.model';
+import { UserCredentials } from '../../models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     const user: UserCredentials = this.form.getRawValue();
     this.authService
-      .login(user.email, user.password)
+      .login(user.email, user.password) 
       .pipe(first())
       .subscribe({
         next: (res) => {
@@ -52,5 +52,4 @@ export class LoginComponent implements OnInit {
           console.log(err);
         },
       });
-  }
-}
+  }}
