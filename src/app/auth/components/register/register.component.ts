@@ -8,6 +8,7 @@ import { first } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../models/user.model';
 import { RouterOutlet } from '@angular/router';
+import { MatSelectModule } from '@angular/material/select';
 // import { User } from '../../models/user.model';
 
 @Component({
@@ -18,7 +19,8 @@ import { RouterOutlet } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    RouterOutlet
+    RouterOutlet,
+    MatSelectModule,
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
@@ -37,6 +39,7 @@ export class RegisterComponent implements OnInit {
       name: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required]),
+      role: new FormControl(null, [Validators.required]),
     });
   }
 
