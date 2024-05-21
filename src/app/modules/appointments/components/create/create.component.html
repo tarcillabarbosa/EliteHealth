@@ -1,1 +1,139 @@
-<p>create works!</p>
+<div class="_container mt-5 pb-5">
+    <div class="_form position-relative">
+      @if(!appointment) {
+      }
+  
+      <h1 class="section-title">{{ id ? "Editar" : "Agendar" }} Consulta</h1>
+  
+      <button
+        mat-icon-button
+        color=""
+        type="button"
+        class="me-auto position-absolute top-0 text-bg-light text-muted"
+        routerLink="/appointments"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+  
+      @if (appointment && permissions.canAlterApptmStatus(appointment) ) {
+      <form
+        [formGroup]="statusForm"
+        (ngSubmit)="onSubmitStatus()"
+        class="border-bottom pb-4"
+      >
+        <h2 class="d-block mb-1">Alterar Status</h2>
+        <mat-radio-group
+          aria-label="Select an option"
+          class="mb-3"
+          formControlName="status"
+        >
+          <div class="d-flex justify-content-around">
+            @for(status of apptmStatusList; track status) {
+            @if(authService.isAdmin() || status !== 'DONE') {
+            <mat-radio-button
+              color="primary"
+              value="{{ status }}"
+              [checked]="status === appointment.status"
+              >{{ statusDict[status].title }}</mat-radio-button
+            >
+            } }
+          </div>
+        </mat-radio-group>
+  
+        <div class="d-flex justify-content-end mt-3">
+          <div>
+            <button
+              mat-flat-button
+              color="primary"
+              class=""
+              [disabled]="statusForm.invalid"
+            >
+              Salvar
+            </button>
+          </div>
+        </div>
+      </form>
+      }
+  
+      @if(!appointment || permissions.canEditApptmInfo(appointment!)) {
+      <div>
+        @if(appointment) {
+        <h2 class="d-block mb-3">Alterar informações</h2>
+        }
+  
+        <form [formGroup]="infoForm" (ngSubmit)="onSubmitInfo()" class="">
+          <mat-form-field>
+            <mat-label>Especialidade</mat-label>
+            <select
+              matNativeControl
+              formControlName="specialty"
+              name="specialty"
+              id="specialty"
+              required
+            >
+              @for (spc of specialtyList; track spc) {
+              <option value="{{ spc }}">{{ spc }}</option>
+              }
+            </select>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <mat-label>Médico</mat-label>
+            <input matInput formControlName="doctor" name="doctor" id="doctor" />
+            <mat-error>O campo é obrigatório</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <mat-label>Data</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              formControlName="date"
+              [min]="nextDayString"
+            />
+            <mat-hint>DD/MM/AAAA</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <mat-label>Hora</mat-label>
+            <input
+              matInput
+              type="time"
+              id="time"
+              name="time"
+              formControlName="time"
+            />
+            <mat-error>O campo é obrigatório</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <mat-label>Observação</mat-label>
+            <input matInput formControlName="obs" name="obs" id="obs" />
+          </mat-form-field>
+  
+          <div class="d-flex justify-content-end">
+            <div>
+              <button mat-stroked-button color="" type="reset" class="me-2">
+                Limpar
+              </button>
+              <button
+                mat-flat-button
+                color="primary"
+                class=""
+                [disabled]="infoForm.invalid"
+              >
+                Salvar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      }
+    </div>
+  </div>
+  

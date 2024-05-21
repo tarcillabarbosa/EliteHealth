@@ -1,39 +1,3 @@
-// import { Routes } from '@angular/router';
-// import { AppointmentsComponent } from './modules/appointments/appointments.component';
-// import { AuthComponent } from './auth/auth.component';
-// import { RegisterComponent } from './auth/components/register/register.component';
-// import { LoginComponent } from './auth/components/login/login.component';
-// import { AuthService } from './auth/services/auth.service';
-
-// export const routes: Routes = [
-// {
-//     path: 'login',
-//     component: LoginComponent,},
-
-// {
-//     path: 'register',
-//     component: RegisterComponent,
-// },
-
-// // {
-// //         path: '',
-// //         redirectTo: 'login',
-// //         pathMatch: 'full',
-// //     },
-
-//  {  path: 'appointments',
-//     component: AppointmentsComponent,
-// },
-
-// // { path: 'auth',
-// //     component: AuthService,
-// //     children: [ {
-// //         path: 'login',
-// //         component: LoginComponent,
-// // } ] ,
-// // }
-// ];
-
 import { Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
 import { AppointmentsComponent } from './modules/appointments/appointments.component';
@@ -42,8 +6,8 @@ import { CreateComponent } from './modules/appointments/components/create/create
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { authGuard } from './commons/core/guards/auth.guard';
-// import { NotFoundComponent } from './commons/components/not-found/not-found.component';
 import { editGuard } from './commons/core/guards/edit.guard';
+import { NotFoundComponent } from './commons/components/not-found/not-found.component';
 
 export const routes: Routes = [
   {
@@ -85,7 +49,7 @@ export const routes: Routes = [
       },
     ],
   },
-//   { path: 'not-found', component: NotFoundComponent },
-//   { path: '**', redirectTo: 'not-found' },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', redirectTo: 'not-found' },
 ];
 
