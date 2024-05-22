@@ -35,7 +35,7 @@ export const routes: Routes = [
     canActivate: [authGuard],
     children: [
       {
-        path: '',
+        path: 'list',
         component: ListComponent,
       },
       {
