@@ -46,7 +46,8 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (res) => {
           localStorage.setItem(Constants.TOKEN_KEY, `Bearer ${res.token}`);
-          this.router.navigate(['appointments/list']);
+          localStorage.setItem(Constants.USER_INFO, JSON.stringify(res.user));
+          this.router.navigate(['/appointments/list']);
         },
         error: (err) => {
           console.log(err);

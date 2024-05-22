@@ -176,7 +176,7 @@ export class CreateComponent implements OnInit {
         console.error(err);
       },
       complete: () => {
-        this.router.navigate(['appointments']);
+        this.router.navigate(['appointments/list']);
       },
     });
   }
@@ -191,7 +191,7 @@ export class CreateComponent implements OnInit {
           console.error(err);
         },
         complete: () => {
-          this.router.navigate(['appointments']);
+          this.router.navigate(['appointments/list']);
         },
       });
   }
@@ -206,7 +206,7 @@ export class CreateComponent implements OnInit {
           console.error(err);
         },
         complete: () => {
-          this.router.navigate(['appointments']);
+          this.router.navigate(['appointments/list']);
         },
       });
   }
