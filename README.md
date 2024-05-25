@@ -1,27 +1,26 @@
-# EliteSaude
+# Elite Health
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+Projeto criado em [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
-## Development server
+## Gerenciamento das suas consultas médicas em suas mãos!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Projeto Final do Módulo de Angular II
 
-## Code scaffolding
+### Objetivo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Desenvolver, utilizando os conceitos abordados ao longo do módulo, uma aplicação de gerenciamento de consultas médicas.
 
-## Build
+### Como funciona?
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- A aplicação consiste em um sistema de gerenciamento de consultas médicas, que deverá ter, obrigatoriamente:
 
-## Running unit tests
+- Uma tela de cadastro de usuário, levando em conta os perfis possíveis (USER e ADMIN).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Uma tela de login, onde usuário poderá autenticar-se na aplicação.
 
-## Running end-to-end tests
+- Uma tela de dashboard, onde o usuário poderá visualizar e gerenciar as consultas.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+### API
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Para funcionamento do aplicativo é necessário utilizar a API que podemos encontrar neste repositório: https://github.com/ivirson/appointments-api
