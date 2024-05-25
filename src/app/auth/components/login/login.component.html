@@ -1,3 +1,4 @@
+<app-elite-image></app-elite-image>
 <div class="container">
     <h2 class="mt-5 text-center">Login</h2>
     <form class="mx-auto" [formGroup]="form" (ngSubmit)="login()">
@@ -21,7 +22,7 @@
       <div class="row mb-3">
         <div class="col-md-4 offset-md-4 d-flex justify-content-between">
           <button mat-flat-button color="primary" [disabled]="form.invalid">
-            Salvar
+            Entrar
           </button>
           <button mat-button routerLink="/auth/register">Cadastrar-se</button>
         </div>

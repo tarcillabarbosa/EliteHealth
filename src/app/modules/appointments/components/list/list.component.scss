@@ -1,0 +1,27 @@
+.edit-btn {
+    background-color: rgb(0, 0, 131) !important; 
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+ 
+  button[disabled] {
+    background-color: #ccc !important; 
+    cursor: not-allowed;
+  }
+
+  .apptm-info {
+    display: flex;
+    flex-direction: column;
+  
+    > span {
+      margin-bottom: 5px;
+    }
+  }
+  
+  

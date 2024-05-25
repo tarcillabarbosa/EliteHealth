@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 import { User } from '../../models/user.model';
 import { RouterOutlet } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select';
+import { EliteImageComponent } from '../../../commons/components/elite-image/elite-image.component';
 // import { User } from '../../models/user.model';
 
 @Component({
@@ -21,6 +22,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatButtonModule,
     RouterOutlet,
     MatSelectModule,
+    EliteImageComponent
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',

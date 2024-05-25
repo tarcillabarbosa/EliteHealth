@@ -8,6 +8,7 @@ import { first } from 'rxjs';
 import { Constants } from '../../../commons/constants/constants.enum';
 import { AuthService } from '../../services/auth.service';
 import { UserCredentials } from '../../models/user.model';
+import { EliteImageComponent } from '../../../commons/components/elite-image/elite-image.component';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ import { UserCredentials } from '../../models/user.model';
     MatInputModule,
     MatButtonModule,
     RouterLink,
+    EliteImageComponent
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',

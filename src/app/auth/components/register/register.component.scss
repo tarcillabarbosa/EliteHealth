@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    padding: 1px; 
+  
+    .form {
+      width: 100%; // Para garantir que o formulário ocupe a largura completa do contêiner
+      max-width: 500px; // Limitar a largura máxima do formulário
+      padding: 0 15px; // Um pouco de padding para evitar que o conteúdo encoste nas bordas
+  
+      .row {
+        margin: 0 auto; // Centraliza as linhas do Bootstrap
+      }
+  
+      .col-md-4 {
+        margin-left: auto; // Centraliza as colunas de Bootstrap
+        margin-right: auto; // Centraliza as colunas de Bootstrap
+      }
+    }
+  }
+  
+  

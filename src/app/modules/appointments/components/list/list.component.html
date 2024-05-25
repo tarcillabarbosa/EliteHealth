@@ -37,28 +37,17 @@
       </div>
   
       <mat-card-actions class="flex-center">
-        <!-- Edit button -->
-        <button
-          mat-mini-fab
-          color="primary"
-          class="flex-center edit-btn"
-          [disabled]="!permissions.canEnterEditPage(apptm)"
-          (click)="editAppointment(apptm.id!)"
-        >
-          <i class="fa-solid fa-pen"></i>
-        </button>
+
+        <button mat-mini-fab color="primary" class="flex-center edit-btn" [disabled]="!permissions.canEnterEditPage(apptm)" (click)="editAppointment(apptm.id!)">
+          <img src="https://img.icons8.com/?size=100&id=8186&format=png&color=FFFFFF" alt="Editar" style="width: 20px; height: 20px;">
+        </button>               
+        
   
         @if(authService.isAdmin()) {
   
-        <button
-          mat-mini-fab
-          color=""
-          class="flex-center delete-btn"
-          [disabled]="!permissions.canDelete(apptm)"
-          (click)="openDeleteConfirmationDialog(apptm.id!)"
-        >
-          <i class="fa-solid fa-trash"></i>
-        </button>
+        <button mat-mini-fab color="" class="flex-center delete-btn" [disabled]="!permissions.canDelete(apptm)" (click)="openDeleteConfirmationDialog(apptm.id!)">
+          <img src="https://img.icons8.com/?size=100&id=e6TWwmmzpzFh&format=png&color=FA5252" alt="Excluir" style="width: 20px; height: 20px;">
+        </button>        
         }
   
         <div

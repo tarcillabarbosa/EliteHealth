@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 1px; 
+  
+    .form {
+      width: 100%; 
+      max-width: 500px; 
+      padding: 0 15px; 
+  
+      .row {
+        margin: 0 auto; 
+      }
+  
+      .col-md-4 {
+        margin-left: auto; 
+        margin-right: auto; 
+      }
+    }
+  }
+  
