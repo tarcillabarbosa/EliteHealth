@@ -41,7 +41,6 @@ export class ListComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    // to avoid ExpressionChangedAfterItHasBeenCheckedError
     setTimeout(() => {
       this.getAppointments();
     }, 0);
